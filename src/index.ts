@@ -72,10 +72,9 @@ class arabicStrings {
 
     static removeNonArabic(str: string, excludeChars: string = ""): string {
         const exclusionRegex = new RegExp(`[${excludeChars}]`, "gm");
-        return str.replace(new RegExp(`[^\\u0621-\\u0652${excludeChars}]`, "gm"), "").replace(exclusionRegex, "");
-      }
+        return str.replace(new RegExp(`[^\\u0621-\\u0652${excludeChars}]`, "gm"), "");
+    }
       
-
     static removeArabic(str: string): string {
         return str.replace(/[\u0621-\u0652]/gm, "");
     }
@@ -87,7 +86,6 @@ class arabicStrings {
 
     static sanitize(str: string): string {
         str = str.replace(arabicStrings.ALIF, 'ا').replace(arabicStrings.YA, 'ي').replace(arabicStrings.TA, 'ه');
-      
         str = arabicStrings.removeTatwel(str)
         str = arabicStrings.removeTashkel(str)
       

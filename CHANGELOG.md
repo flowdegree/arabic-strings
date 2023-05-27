@@ -1,5 +1,11 @@
 # @6degrees/arabic-strings
 
+## 0.2.1
+
+### Patch Changes
+
+- fix removeNonArabic
+
 ## 0.2.0
 
 ### Minor Changes
