@@ -34,7 +34,8 @@ class arabicStrings {
     static ALIF = /[أإآ]/g;
     static YA = /[ىي]/g;
     static TA = /[ة]/g;
-    static TASHKEEL_REGEX = new RegExp("[" + arabicStrings.TASHKEEL.join() + "]", 'g'); // /[\u064B-\u0652]
+    static TASHKEEL_REGEX = new RegExp(arabicStrings.TASHKEEL.join(""), "g");
+
     static TATWEEL_REGEX = /ـ/g; // /\u0640/g
     
     static howArabic(str: string): number {
@@ -69,9 +70,11 @@ class arabicStrings {
         return str.replace(arabicStrings.TASHKEEL_REGEX, '');
     }
 
-    static removeNonArabic(str: string): string {
-        return str.replace(/[^\u0621-\u0652]/gm, "");
-    }
+    static removeNonArabic(str: string, excludeChars: string = ""): string {
+        const exclusionRegex = new RegExp(`[${excludeChars}]`, "gm");
+        return str.replace(new RegExp(`[^\\u0621-\\u0652${excludeChars}]`, "gm"), "").replace(exclusionRegex, "");
+      }
+      
 
     static removeArabic(str: string): string {
         return str.replace(/[\u0621-\u0652]/gm, "");

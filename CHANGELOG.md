@@ -1,5 +1,11 @@
 # @6degrees/arabic-strings
 
+## 0.2.0
+
+### Minor Changes
+
+- enhanced removeNonArabic to accept excluded characters
+
 ## 0.1.1
 
 ### Patch Changes
