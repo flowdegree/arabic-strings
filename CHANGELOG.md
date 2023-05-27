@@ -1,5 +1,11 @@
 # @6degrees/arabic-strings
 
+## 0.1.1
+
+### Patch Changes
+
+- edit readme
+
 ## 0.1.0
 
 ### Minor Changes

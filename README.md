@@ -8,35 +8,40 @@
 ### node
 
 ```js
-require('arabicString')
+const arabicString = require('@6degrees/arabic-strings');
 ```
-##String#howArabic()
+
+## String#howArabic()
 
 The percentage of Arabic letters in the `String`.
 
 ### Example
 
 ```js
-'foobar'.howArabic()
+arabicString.howArabic('foobar');
 //=> 0.0
-'فوو bar'.howArabic()
+
+arabicString.howArabic('فوو bar');
 //=> 0.5
-'فوبار'.howArabic()
+
+arabicString.howArabic('فوبار');
 //=> 1.0
 ```
 
-##String#howNotArabic()
+## String#howNotArabic()
 
 The percentage of non-Arabic letters in the `String`.
 
 ### Example
 
 ```js
-'فوبار'.howNotArabic()
+arabicString.howNotArabic('فوبار');
 //=> 0.0
-'فوو bar'.howNotArabic()
+
+arabicString.howNotArabic('فوو bar');
 //=> 0.5
-'foobar'.howNotArabic()
+
+arabicString.howNotArabic('foobar');
 //=> 1.0
 ```
 
@@ -47,9 +52,10 @@ Is the `String` Arabic, based on a given `threshold` between `0` and `1`. Defaul
 ### Example
 
 ```js
-'فوو'.isArabic()
+arabicString.isArabic('فوو');
+
 //=> true
-'فوو bar baz'.isArabic(0.5)
+arabicString.isArabic('فوو bar baz');
 //=> false
 ```
 
@@ -60,9 +66,10 @@ Does the `String` have _any_ Arabic letter.
 ### Example
 
 ```js
-'فوو bar'.hasArabic()
+arabicString.hasArabic('فوو bar');
 //=> ture
-'foo bar'.hasArabic()
+
+arabicString.hasArabic('foo bar');
 //=> false
 ```
 
@@ -73,24 +80,41 @@ Will return the `String` without the diacritics.
 ### Example
 
 ```js
-'مٌحمْد'.removeTashkel()
+arabicString.removeTashkel('مٌحمْد');
 //=> 'محمد'
-'وَتُرى الْكَوَاكِبِ فِي الْمَجَرَّةِ شَرَعَا*** مِثْلُ الظِّباءِ كوارعا فِي جَدْوَلِ'.removeTashkel()
+
+arabicString.removeTashkel('وَتُرى الْكَوَاكِبِ فِي الْمَجَرَّةِ شَرَعَا*** مِثْلُ الظِّباءِ كوارعا فِي جَدْوَلِ');
 //=> 'وترى الكواكب في المجرة شرعا *** مثل الظباء كوارعا في جدول'
 ```
 
-##String#removeTatwel()
+## String#removeTatwel()
 
 Will return the `String` without the diacritics.
 
 ### Example
 
 ```js
-'مــرحــبــا'.removeTatwel()
+arabicString.removeTatwel('مــرحــبــا');
 //=> 'مرحبا'
 ```
 
+## String#sanitize()
 
+Will return the `String` without the diacritics, and clean characters.
+
+### Example
+
+```js
+arabicString.sanitize(`أَنا الَّذي نَظَرَ الأَعمى إِلى أَدَبي ... وَأَسمَـعَت كَلِماتي مَن بِهِ صَمَمُ
+أَنـامُ مِلءَ جُفوني عَن شَوارِدِهــا ... وَيَسهَرُ الخَلقُ جَرّاها وَيَختَصِمُ
+وَجـــاهِلٍ مَدَّهُ في جَهلِهِ ضَحِكي ... حَتّى أَتَتهُ يَدٌ فَرّاسَــــــةٌ وَفَـــــمُ
+`);
+/*=> `انا الذي نظر الاعمي الي ادبي ... واسمعت كلماتي من به صمم
+انام ملء جفوني عن شواردها ... ويسهر الخلق جراها ويختصم
+وجاهل مده في جهله ضحكي ... حتي اتته يد فراسه وفم
+`
+*/
+```
 
 ## Credits
 
