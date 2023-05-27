@@ -1,7 +1,7 @@
 {
     "name": "@6degrees/arabic-strings",
     "license": "MIT",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
@@ -20,6 +20,9 @@
         "arabic",
         "clean"
     ],
+    "publishConfig": {
+        "access": "public"
+    },
     "author": "Mohannad F. Otaibi",
     "bugs": {
         "url": "https://github.com/6degrees/arabicStrings/issues"
