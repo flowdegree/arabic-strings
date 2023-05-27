@@ -96,6 +96,7 @@ Will return the `String` without the diacritics.
 
 - Original script [https://github.com/ahmads/arabicString]
 - Enhancements [https://github.com/ahmads/arabicString/pulls]
+- sanitization [https://github.com/ielashi/arabic-nlp]
 
 ## License
 

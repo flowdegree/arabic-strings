@@ -1,5 +1,13 @@
 # @6degrees/arabic-strings
 
+## 0.1.0
+
+### Minor Changes
+
+- Implementing arabic-nlp repo
+
+  - using [https://github.com/ielashi/arabic-nlp/blob/master/index.js]
+
 ## 0.0.3
 
 ### Patch Changes
