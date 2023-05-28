@@ -1,5 +1,15 @@
 # @6degrees/arabic-strings
 
+## 1.0.0
+
+### Major Changes
+
+- Flat structure
+
+### Minor Changes
+
+- 81f0a64: Adjust regexes
+
 ## 0.2.1
 
 ### Patch Changes
