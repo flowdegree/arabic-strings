@@ -31,12 +31,16 @@ class arabicStrings {
         "\u065d", // ( ٝ) arabic reversed damma
         "\u065e", // ( ٞ) arabic fatha with two dots
     ]
-    static ALIF = /[أإآ]/g;
-    static YA = /[ىي]/g;
-    static TA = /[ة]/g;
+    
+    static ALIF_REGEX = new RegExp("[أإآ]", "g");
+
+    static YA_REGEX = new RegExp("[ىي]", "g");
+
+    static TA_REGEX = new RegExp("[ة]", "g");
+
     static TASHKEEL_REGEX = new RegExp(arabicStrings.TASHKEEL.join(""), "g");
 
-    static TATWEEL_REGEX = /ـ/g; // /\u0640/g
+    static TATWEEL_REGEX = new RegExp("\u0640", "g"); //    /ـ/g; // /\u0640/g
     
     static howArabic(str: string): number {
         // strip punctuation, digits, and spaces
@@ -85,7 +89,7 @@ class arabicStrings {
     }
 
     static sanitize(str: string): string {
-        str = str.replace(arabicStrings.ALIF, 'ا').replace(arabicStrings.YA, 'ي').replace(arabicStrings.TA, 'ه');
+        str = str.replace(arabicStrings.ALIF_REGEX, 'ا').replace(arabicStrings.YA_REGEX, 'ي').replace(arabicStrings.TA_REGEX, 'ه');
         str = arabicStrings.removeTatwel(str)
         str = arabicStrings.removeTashkel(str)
       
