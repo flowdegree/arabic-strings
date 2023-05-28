@@ -1,5 +1,11 @@
 # @6degrees/arabic-strings
 
+## 0.3.0
+
+### Minor Changes
+
+- 81f0a64: Adjust regexes
+
 ## 0.2.1
 
 ### Patch Changes
