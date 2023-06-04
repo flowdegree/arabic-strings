@@ -71,6 +71,10 @@ function hasArabic(str: string): boolean {
 }
 
 function removeTashkel(str: string): string {
+    const escapedTashkeel = TASHKEEL.map((t) => "\\" + t).join("|");
+    const regex = new RegExp(escapedTashkeel, "g");
+    return str.replace(regex, '');
+
     return str.replace(TASHKEEL_REGEX, '');
 }
 

@@ -1,5 +1,11 @@
 # @6degrees/arabic-strings
 
+## 1.0.1
+
+### Patch Changes
+
+- fix Shadda cleaning
+
 ## 1.0.0
 
 ### Major Changes
