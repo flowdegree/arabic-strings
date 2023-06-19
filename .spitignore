@@ -1,0 +1,5 @@
+.changeset/
+.github/
+.spitignore
+package.json
+pnpm-lock.yaml
