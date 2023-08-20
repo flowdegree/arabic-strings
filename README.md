@@ -1,21 +1,37 @@
-# arabicStrings
+# Arabic Strings
 
- An NPM package that extends the native String object with methods to help when dealing with Arabic strings for node and the browser.
- > NPM updated package of @ahmads/arabicString repo
+A library for handling Arabic strings, including removing diacritics, normalizing characters, and more.
+
+## Installation
+
+```bash
+npm install @6degrees/arabic-strings
+```
 
 ## Usage
 
-### node
+### Importing the Library
 
 ```js
-const arabicString = require('@6degrees/arabic-strings');
+import * as arabicStrings from '@6degrees/arabic-strings';
 ```
 
-## String#howArabic()
+## Removing Diacritics (Harakat)
+
+```js
+// Define a string with Arabic diacritics (Harakat)
+const str = 'مَرحبًا';
+
+// Use the removeHarakat method to remove the diacritics from the string
+const result = arabicStrings.removeHarakat(str);
+
+// Output the result without diacritics
+console.log(result); // Outputs: مرحبا
+```
+
+### How much of the string is Arabic
 
 The percentage of Arabic letters in the `String`.
-
-### Example
 
 ```js
 arabicString.howArabic('foobar');
@@ -28,11 +44,9 @@ arabicString.howArabic('فوبار');
 //=> 1.0
 ```
 
-## String#howNotArabic()
+### String#howNotArabic()
 
 The percentage of non-Arabic letters in the `String`.
-
-### Example
 
 ```js
 arabicString.howNotArabic('فوبار');
@@ -45,11 +59,9 @@ arabicString.howNotArabic('foobar');
 //=> 1.0
 ```
 
-## String#isArabic(threshold)
+### String#isArabic(threshold)
 
 Is the `String` Arabic, based on a given `threshold` between `0` and `1`. Defaults to `0.79`.
-
-### Example
 
 ```js
 arabicString.isArabic('فوو');
@@ -59,11 +71,9 @@ arabicString.isArabic('فوو bar baz');
 //=> false
 ```
 
-## String#hasArabic()
+### String#hasArabic()
 
 Does the `String` have _any_ Arabic letter.
-
-### Example
 
 ```js
 arabicString.hasArabic('فوو bar');
@@ -73,11 +83,9 @@ arabicString.hasArabic('foo bar');
 //=> false
 ```
 
-## String#removeTashkel()
+### String#removeTashkel()
 
 Will return the `String` without the diacritics.
-
-### Example
 
 ```js
 arabicString.removeTashkel('مٌحمْد');
@@ -87,22 +95,18 @@ arabicString.removeTashkel('وَتُرى الْكَوَاكِبِ فِي الْ�
 //=> 'وترى الكواكب في المجرة شرعا *** مثل الظباء كوارعا في جدول'
 ```
 
-## String#removeTatwel()
+### String#removeTatwel()
 
 Will return the `String` without the diacritics.
-
-### Example
 
 ```js
 arabicString.removeTatwel('مــرحــبــا');
 //=> 'مرحبا'
 ```
 
-## String#sanitize()
+### String#sanitize()
 
 Will return the `String` without the diacritics, and clean characters.
-
-### Example
 
 ```js
 arabicString.sanitize(`أَنا الَّذي نَظَرَ الأَعمى إِلى أَدَبي ... وَأَسمَـعَت كَلِماتي مَن بِهِ صَمَمُ
