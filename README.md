@@ -5,7 +5,7 @@ A library for handling Arabic strings, including removing diacritics, normalizin
 ## Installation
 
 ```bash
-npm install @6degrees/arabic-strings
+npm install @flowdegree/arabic-strings
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install @6degrees/arabic-strings
 ### Importing the Library
 
 ```js
-import * as arabicStrings from '@6degrees/arabic-strings';
+import * as arabicStrings from '@flowdegree/arabic-strings';
 ```
 
 ## Removing Diacritics (Harakat)
