@@ -1,5 +1,11 @@
 # @6degrees/arabic-strings
 
+## 2.0.0
+
+### Major Changes
+
+- move to @flowdegree
+
 ## 1.0.1
 
 ### Patch Changes
